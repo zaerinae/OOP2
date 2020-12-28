@@ -15,5 +15,8 @@ interface AlbumDao {
 
     @Query("SELECT * FROM album")
     suspend fun getAllAlbum(): List<Album>
+
+    @Query("SELECT * FROM album WHERE id=:album_id")
+    suspend fun getAlbum(album_id: Int) : List<Album>
 }
 

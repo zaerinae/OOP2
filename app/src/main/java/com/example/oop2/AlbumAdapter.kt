@@ -23,6 +23,12 @@ class AlbumAdapter (private val AllAlbum: ArrayList<Album>, private val listener
         holder.view.text_nama.setOnClickListener {
             listener.onClick(album)
         }
+        holder.view.icon_delete.setOnClickListener {
+            listener.onDelete(album)
+        }
+        holder.view.icon_edit.setOnClickListener {
+            listener.onUpdate(album)
+        }
     }
 
     class AlbumViewHolder(val view: View) : RecyclerView.ViewHolder(view)
@@ -35,5 +41,7 @@ class AlbumAdapter (private val AllAlbum: ArrayList<Album>, private val listener
 
     interface OnAdapterListener {
         fun onClick(album: Album)
+        fun onDelete(album: Album)
+        fun onUpdate(album: Album)
     }
 }

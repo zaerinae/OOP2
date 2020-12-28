@@ -23,7 +23,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:hint="Musisi"
-        android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_nama" />
@@ -48,5 +47,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_harga" />
+
+    <Button
+        android:id="@+id/btn_updateAlbum"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:text="UPDATE"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_saveAlbum" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
