@@ -2,7 +2,9 @@ package com.example.oop2
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import com.example.oop2.Database.AppRoomDB
+import com.example.oop2.Database.Constant
 import com.example.oop2.Database.User
 import kotlinx.android.synthetic.main.activity_edit_user.*
 import kotlinx.coroutines.CoroutineScope
@@ -12,11 +14,13 @@ import kotlinx.coroutines.launch
 class EditUserActivity : AppCompatActivity() {
 
     val db by lazy { AppRoomDB(this) }
+    private var userId: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_edit_user)
         setupListener()
+        setupView()
     }
 
     fun setupListener(){
@@ -28,5 +32,46 @@ class EditUserActivity : AppCompatActivity() {
                 finish()
             }
         }
+        btn_updateUser.setOnClickListener{
+            CoroutineScope(Dispatchers.IO).launch {
+                db.userDao().updateUser(
+                    User(userId, txt_nama.text.toString(), txt_username.text.toString())
+                )
+                finish()
+            }
+        }
+    }
+
+    fun setupView() {
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        val intentType = intent.getIntExtra("intent_type", 0)
+        when (intentType) {
+            Constant.TYPE_CREATE -> {
+                btn_updateUser.visibility = View.GONE
+            }
+            Constant.TYPE_READ -> {
+                btn_saveUser.visibility = View.GONE
+                btn_updateUser.visibility = View.GONE
+                getUser()
+            }
+            Constant.TYPE_UPDATE -> {
+                btn_saveUser.visibility = View.GONE
+                getUser()
+            }
+        }
+    }
+
+    fun getUser() {
+        userId = intent.getIntExtra("intent_id", 0)
+        CoroutineScope(Dispatchers.IO).launch {
+            val users =  db.userDao().getUser( userId )[0]
+            txt_nama.setText(users.nama)
+            txt_username.setText(users.username)
+        }
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return super.onSupportNavigateUp()
     }
 }

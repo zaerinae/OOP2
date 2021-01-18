@@ -9,10 +9,10 @@
     <Button
         android:id="@+id/btn_user"
         android:layout_width="250dp"
-        android:layout_height="0dp"
+        android:layout_height="80dp"
         android:layout_marginTop="259dp"
         android:layout_marginBottom="36dp"
-        android:text="User"
+        android:text="USER"
         app:layout_constraintBottom_toTopOf="@+id/btn_album"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -22,7 +22,7 @@
     <Button
         android:id="@+id/btn_album"
         android:layout_width="250dp"
-        android:layout_height="0dp"
+        android:layout_height="80dp"
         android:layout_marginBottom="316dp"
         android:text="Album"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -30,5 +30,6 @@
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_user" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

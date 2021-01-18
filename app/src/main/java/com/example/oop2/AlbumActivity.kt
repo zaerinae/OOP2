@@ -1,9 +1,11 @@
 package com.example.oop2
 
+import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.oop2.Database.Album
@@ -51,14 +53,17 @@ class AlbumActivity : AppCompatActivity() {
     fun setupRecyclerView() {
         albumAdapter = AlbumAdapter(arrayListOf(), object: AlbumAdapter.OnAdapterListener {
             override fun onClick(album: Album) {
+                // read detail
                 intentEdit(album.id, Constant.TYPE_READ)
             }
 
             override fun onDelete(album: Album) {
+                // delete data
                 deleteDialog(album)
             }
 
             override fun onUpdate(album: Album) {
+                // edit data
                 intentEdit(album.id, Constant.TYPE_UPDATE)
             }
 
