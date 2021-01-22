@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "699256564574",
+    "project_id": "crudoop2",
+    "storage_bucket": "crudoop2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:699256564574:android:90ef738d6a4a987b50fdcf",
+        "android_client_info": {
+          "package_name": "com.example.oop2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "699256564574-gm94jsueqslbi6592kvhhrt5q8gf45eo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.oop2",
+            "certificate_hash": "80a39b64aa52727e6c020b10386bb33ae78466e8"
+          }
+        },
+        {
+          "client_id": "699256564574-mar626nkfga528u47patgefomdkgm1pv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCFHirfTBGgciNkVOO36bDCt3wTKUhz97A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "699256564574-mar626nkfga528u47patgefomdkgm1pv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
